@@ -8,27 +8,27 @@ export default new Vuex.Store({
     todos: [
       {
         "id": 1,
-        "name": "delectus aut autem",
+        "title": "delectus aut autem",
         "completed": false
       },
       {
         "id": 2,
-        "name": "quis ut nam facilis et officia qui",
+        "title": "quis ut nam facilis et officia qui",
         "completed": false
       },
       {
         "id": 3,
-        "name": "fugiat veniam minus",
+        "title": "fugiat veniam minus",
         "completed": false
       },
       {
         "id": 4,
-        "name": "et porro tempora",
+        "title": "et porro tempora",
         "completed": true
       },
       {
         "id": 5,
-        "name": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+        "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
         "completed": false
       },
     ]
@@ -44,10 +44,10 @@ export default new Vuex.Store({
     deleteTodo: (state, id) => state.todos = state.todos.filter(todo => todo.id !== id),
   },
   actions: {
-    addTodo({ commit }, name) {
+    addTodo({ commit }, title) {
       commit('addTodo', {
         id: Math.floor(Math.random() * Math.floor(1000)),
-        name,
+        title,
         completed: false,
       })
     },

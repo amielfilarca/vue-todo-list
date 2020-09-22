@@ -2,7 +2,7 @@
   <v-row align="center" no-gutters>
     <v-checkbox @change="checkboxHandler(todo)" v-model="todo.completed" />
     <v-spacer />
-    <v-col class="text-truncate" cols="8" :class="{'completed':todo.completed}">{{todo.name}}</v-col>
+    <v-col class="text-truncate" cols="8" :class="{'completed':todo.completed}">{{todo.title}}</v-col>
     <v-spacer />
     <v-btn @click="deleteTodo(todo.id)" icon>
       <v-icon>mdi-trash-can-outline</v-icon>
@@ -21,7 +21,7 @@ export default {
     checkboxHandler(todo) {
       const newTodo = {
         id: todo.id,
-        name: todo.name,
+        title: todo.title,
         completed: todo.completed == true ? true : false,
       };
       this.updateTodo(newTodo);

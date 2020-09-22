@@ -1,8 +1,8 @@
 <template>
   <v-col>
     <v-row align="center" no-gutters>
-      <v-text-field v-model="name" class="pr-2" label="Task name"></v-text-field>
-      <v-btn @click="addTodo(name)" icon :disabled="name == ''">
+      <v-text-field v-model="title" class="pr-2" label="Task name"></v-text-field>
+      <v-btn @click="clickHandler(title)" icon :disabled="title == ''">
         <v-icon>mdi-send</v-icon>
       </v-btn>
     </v-row>
@@ -16,11 +16,15 @@ export default {
   name: "AddTodo",
   data() {
     return {
-      name: "",
+      title: "",
     };
   },
   methods: {
     ...mapActions(["addTodo"]),
+    clickHandler(title) {
+      this.addTodo(title);
+      this.title = "";
+    },
   },
 };
 </script>
