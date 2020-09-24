@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="py-0">
     <v-row align="center" justify="center">
-      <v-col class="mx-5">
+      <v-col cols="12" class="py-0">
         <AddTodo />
         <TodoList />
       </v-col>

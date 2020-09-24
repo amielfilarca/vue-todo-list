@@ -1,8 +1,18 @@
 <template>
-  <v-col>
+  <v-col class="px-0 pb-0">
     <v-row align="center" no-gutters>
-      <v-text-field v-model="title" class="pr-2" label="Task name"></v-text-field>
-      <v-btn @click="clickHandler(title)" icon :disabled="title == ''">
+      <v-text-field
+        @keyup.enter="clickHandler(title)"
+        v-model="title"
+        class="pr-2"
+        label="Add a task"
+      />
+      <v-btn
+        @click="clickHandler(title)"
+        icon
+        :disabled="title == ''"
+        color="primary"
+      >
         <v-icon>mdi-send</v-icon>
       </v-btn>
     </v-row>
@@ -22,8 +32,10 @@ export default {
   methods: {
     ...mapActions(["addTodo"]),
     clickHandler(title) {
-      this.addTodo(title);
-      this.title = "";
+      if (this.title != "") {
+        this.addTodo(title);
+        this.title = "";
+      }
     },
   },
 };

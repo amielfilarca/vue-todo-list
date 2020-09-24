@@ -2,17 +2,14 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">Todo List</div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn @click="signin" text>
+      <v-spacer />
+      <v-btn @click="signin" text class="px-0">
         <span class="mr-2">Sign-in</span>
         <v-icon>mdi-login</v-icon>
       </v-btn>
     </v-app-bar>
-
     <v-main>
-      <router-view></router-view>
+      <router-view />
     </v-main>
   </v-app>
 </template>

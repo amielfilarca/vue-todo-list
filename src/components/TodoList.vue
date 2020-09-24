@@ -1,7 +1,7 @@
 <template>
-  <v-col>
+  <v-expansion-panels v-model="panel" multiple accordion>
     <TodoItem v-for="todo in getTodos" :key="todo.id" :todo="todo" />
-  </v-col>
+  </v-expansion-panels>
 </template>
 
 <script>
@@ -12,6 +12,11 @@ export default {
   name: "TodoList",
   components: {
     TodoItem,
+  },
+  data() {
+    return {
+      panel: [],
+    };
   },
   computed: {
     ...mapGetters(["getTodos"]),
